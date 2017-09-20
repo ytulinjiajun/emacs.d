@@ -1,0 +1,4 @@
+;;引号，括号等自动匹配
+(smartparens-global-mode t)
+
+(provide 'config-smartparens-plugin)
