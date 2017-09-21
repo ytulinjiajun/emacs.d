@@ -258,3 +258,31 @@
 ;; 				("blogs-qt-arch-part1.org" :level . 1)
 ;; 				("blogs-tcp-ip-active.org" :level . 1)
 ;; 				("blogs-tcp-ip-arch-part1.org" :level . 1))))
+
+
+
+
+;;-----------------------------org-mode快捷键-------------------------------------
+;; (global-set-key (kbd "C-c C-c") 'org-capture)
+;; (global-set-key (kbd "C-c C-a") 'org-agenda)
+;; (global-set-key (kbd "C-c C-l") 'org-link)
+;; (global-set-key (kbd "C-c C-b") 'org-switchb)
+
+;;在当前光标的位置插入一个同级的TODO标题
+(global-set-key [M-s-return] (quote org-insert-todo-heading))
+
+;;在当前同级标题的最后一个标题后面插入同级的TODO标题
+ (global-set-key [C-s-return] (quote org-insert-todo-heading-respect-content))
+
+;;该配置使得光标所在的大纲以及该大纲下面的子大纲同时下降一级
+(global-set-key [M-s-left] (quote org-promote-subtree))
+
+;;该配置使得光标所在的大纲以及该大纲下面的子大纲同时上升一级
+(global-set-key [M-s-right] (quote org-demote-subtree))
+
+(global-set-key [M-s-up] (quote org-move-subtree-up))
+
+(global-set-key [M-s-down] (quote org-move-subtree-down))
+
+
+

@@ -13,5 +13,4 @@
  '(iedit-occurrence ((t (:inherit region)))))
 ;; 将项目转接在各文件之间，方便清理和回顾。
 
-
 (provide 'init-custom)

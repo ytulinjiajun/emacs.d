@@ -50,40 +50,6 @@
 ;;对于不需要列出的内容，在对应的关键字前面使用！就可以屏蔽掉
 (global-set-key (kbd "C-c s") 'helm-do-ag-project-root)
 
-;;以光标所在位置为基准向两边扩展或缩小选区
-(global-set-key (kbd "C-=") 'er/expand-region)
-
-;;使用hippie-expand来增强补全功能，弥补company的不足
-(global-set-key (kbd "s-/") 'hippie-expand)
-
-;;使用增强后的occur-mode,经过增强后的occur-dwim能自动抓取光标所在位置的单词进行搜索(备注：occur-mode时emacs自带的模式)
-(global-set-key (kbd "M-s o") 'occur-dwim)
-
-;;使用iedit-mode,能够在当前文档中标记某单词，并同时编辑被标记的所有单词(备注：该配置依赖于iedit插件)
-;;使用M-s e标记，再次使用则撤销标记，一般情况下结合occur-mode一起使用
-(global-set-key (kbd "M-s e") 'iedit-mode)
-
-;;-----------------------------org-mode快捷键-------------------------------------
-;; (global-set-key (kbd "C-c C-c") 'org-capture)
-;; (global-set-key (kbd "C-c C-a") 'org-agenda)
-;; (global-set-key (kbd "C-c C-l") 'org-link)
-;; (global-set-key (kbd "C-c C-b") 'org-switchb)
-
-;;在当前光标的位置插入一个同级的TODO标题
-(global-set-key [M-s-return] (quote org-insert-todo-heading))
-
-;;在当前同级标题的最后一个标题后面插入同级的TODO标题
- (global-set-key [C-s-return] (quote org-insert-todo-heading-respect-content))
-
-;;该配置使得光标所在的大纲以及该大纲下面的子大纲同时下降一级
-(global-set-key [M-s-left] (quote org-promote-subtree))
-
-;;该配置使得光标所在的大纲以及该大纲下面的子大纲同时上升一级
-(global-set-key [M-s-right] (quote org-demote-subtree))
-
-(global-set-key [M-s-up] (quote org-move-subtree-up))
-
-(global-set-key [M-s-down] (quote org-move-subtree-down))
 
 
 

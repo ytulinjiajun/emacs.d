@@ -1,6 +1,4 @@
 (provide 'init-base-config)
-;;设定默认工作目录
-;;(setq default-directory "~/learn-git")
 
 ;;关闭工具栏
 (tool-bar-mode -1)
@@ -49,24 +47,13 @@
 
 ;;设置tab缩进的字符数
 (setq default-tab-width 4)
-	
+
 ;;简化yes-or-no
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;;该配置使得可以打开最近访问过的文件
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
-
-;;高亮两边括号
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-
-;;高亮显示当前光标两边的括号(支持24/25版本)
-(defadvice show-paren-function (around fix-show-paren-function activate)
-  (cond ((looking-at-p "\\s(") ad-do-it)
-        (t (save-excursion
-             (ignore-errors (backward-up-list))
-             ad-do-it)))
-  )
 
 ;;批量注释
 (defun my-comment-or-uncomment-region (beg end &optional arg)    
@@ -75,31 +62,26 @@
                  (list (line-beginning-position)    
                        (line-beginning-position 2))))    
   (comment-or-uncomment-region beg end arg)    
-)
-(global-set-key [remap comment-or-uncomment-region] 'my-comment-or-uncomment-region) 
+  )
+(global-set-key [remap comment-or-uncomment-region] 'my-comment-or-uncomment-region)
 
-;;使用hippie-expand来进行补全，该补全弥补company补全的不足，快捷键为S-/
-(setq hippie-expaynd-try-funhvctions-list '(try-expand-dabbrev
-					 try-expand-all-abbrevs
-					 try-expand-dabbrev-from-kill
-					 try-complete-file-name-partially
-					 try-complete-file-name
-					 try-expand-list
-					 try-expand-line
-					 try-complete-lisp-symbol-partially
-					 try-complete-lisp-symbol
-					 ))
-
-;;occur-mode:按下M-s o,按照关键词匹配当前文档的条项，在右缓冲区边列举出来，按e切换至编辑模式，按C-c C-c保存修改并切换至预览模式 
-;;增强occur-mode,使得按下M-s o时能够自动抓取光标所在位置的单词,然后在当前文档中搜索所有出现该单词的条目并在右边缓冲区列出来
-(defun occur-dwim ()
+;;------------------------------------------------------------------
+;; 该配置使得不用选中选取直接按TAB就能对当前缓冲区进行排版
+;;------------------------------------------------------------------ 
+(defun indent-buffer()
   (interactive)
-  (push (if (region-active-p)
-	    (buffer-substring-no-properties
-	     (region-beginning)
-	     (region-end))
-	  (let ((sym (thing-at-point 'symbol)))
-	    (when (stringp sym)
-	      (regexp-quote sym))))
-	regexp-history)
-  (call-interactively 'occur))
+  (indent-region (point-min) (point-max)))
+(defun indent-region-or-buffer()
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+		(progn
+		  (indent-region (region-beginning) (region-end))
+		  (message "Indent selected region."))
+	  (progn
+		(indent-buffer)
+		(message "Indent buffer.")))))
+(global-unset-key (kbd "C-i"))
+(global-set-key (kbd "C-i") 'indent-region-or-buffer)
+
+

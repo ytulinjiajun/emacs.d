@@ -17,6 +17,11 @@
 (global-set-key (kbd "<f2>") 'open-my-config-dir)
 
 ;;------------------------------------------------------------------
+;; 设定默认工作目录
+;;------------------------------------------------------------------
+(setq default-directory "~/.emacs.d")
+
+;;------------------------------------------------------------------
 ;; require plug-in
 ;;------------------------------------------------------------------ 
 (require 'init-startup)
@@ -36,4 +41,9 @@
 
 (require 'config-abbrev-mode)
 
+(require 'config-show-paren-mode)
+
+(require 'config-occur-mode)
+
+(require 'config-imenu-mode)
 

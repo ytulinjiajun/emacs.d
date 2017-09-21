@@ -23,7 +23,4 @@
 ;;该配置使得按下C-c g快捷键执行“查找git所管理的文件”的操作时，在小缓冲区中出现一个可预览的窗口并提供可选项(前提：安装了counsel和swiper插件)
 (global-set-key (kbd "C-c g") 'counsel-git)
 
-;;搜索当前文档中的函数,并跳转
-(global-set-key (kbd "M-s i") 'counsel-imenu)
-
 (provide 'config-swiper-plugin)

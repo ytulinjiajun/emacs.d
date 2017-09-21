@@ -21,8 +21,8 @@
 							 popwin
 							 ace-jump-mode
 							 expand-region
-							 helm-ag		 
 							 iedit
+							 helm-ag
 							 powerline
 							 speedbar
 							 org-pomodoro
@@ -59,6 +59,10 @@
 (require 'config-smartparens-plugin)
 
 (require 'config-popwin-plugin)
+
+(require 'config-expand-region-plugin)
+
+(require 'config-iedit-plugin)
 
 (require 'config-base-plugin)
 
