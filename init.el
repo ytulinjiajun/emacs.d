@@ -55,4 +55,3 @@
 (require 'config-occur-mode)
 
 (require 'config-imenu-mode)
-
