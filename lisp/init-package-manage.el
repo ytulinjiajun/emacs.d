@@ -23,11 +23,11 @@
 							 expand-region
 							 iedit
 							 helm-ag
-							 powerline
-							 speedbar
+							 sr-speedbar
 							 org-pomodoro
-							 which-key
+							 powerline
 							 window-numbering
+							 which-key
 							 youdao-dictionary
 							 ) "Default packages")
 
@@ -64,7 +64,7 @@
 
 (require 'config-iedit-plugin)
 
-(require 'config-base-plugin)
+(require 'config-helm-ag-plugin)
 
 (require 'config-ace-jump-plugin)
 
@@ -72,6 +72,8 @@
 
 (require 'config-sr-speedbar-plugin)
 
+(require 'config-window-numbering-plugin)
 
+(require 'config-powerline-plugin)
 
-
+(require 'config-youdao-dictionary-plugin)

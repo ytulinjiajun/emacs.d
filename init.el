@@ -1,3 +1,12 @@
+;;------------------------使用emacs前的准备---------------------------
+;; 1. org-mode使用了gtd工具，因此，需要创建~/.my-agenda目录，并git clone
+;;    一份自己的gtd文件，如果不需要gtd，也可以在config-org-mode.el中将
+;;	  (setq-default org-agenda-files (quote ("~/.my-agenda")))注释掉即可
+;; 2. helm-ag 插件使用到了linux下的一个工具搜索ag，因此需要先在linux中安装该工具包，
+;;	  apt-get install silversearcher-ag
+;;------------------------------------------------------------------ 
+
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.

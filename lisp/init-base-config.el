@@ -64,6 +64,8 @@
   (comment-or-uncomment-region beg end arg)    
   )
 (global-set-key [remap comment-or-uncomment-region] 'my-comment-or-uncomment-region)
+(global-set-key [?\C-c ?\C-/] 'comment-or-uncomment-region)
+
 
 ;;------------------------------------------------------------------
 ;; 该配置使得不用选中选取直接按TAB就能对当前缓冲区进行排版

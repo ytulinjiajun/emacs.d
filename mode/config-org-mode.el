@@ -8,7 +8,11 @@
 (defun open-my-gtd-dir ()
   (interactive)
   (find-file "~/.my-agenda"))
+(global-set-key (kbd "<f3>") 'open-my-gtd-dir)
 
+;;------------------------------------------------------------------
+;; 指定my-agenda的搜索路径
+;;------------------------------------------------------------------ 
 (setq-default org-agenda-files (quote ("~/.my-agenda")))
 
 ;;------------------------------------------------------------------
@@ -19,7 +23,12 @@
 ;;全屏显示agenda
 (setq-default org-agenda-window-setup (quote current-window))
 
-(setq-default org-pomodoro-length 45)
+;;------------------------------------------------------------------
+;; 番茄时间工作法
+;;------------------------------------------------------------------ 
+(setq-default org-pomodoro-length 40)
+(global-set-key (kbd "C-c p") 'org-pomodoro)
+
 
 ;;高亮BEGIN_SRC里面的代码,插入这个宏的快捷键是：<s回车
 (setq org-src-fontify-natively t)
@@ -27,7 +36,7 @@
 ;;gtd快捷键
 (define-key global-map "\C-c\C-c" 'org-capture)
 (define-key global-map "\C-c\C-a" 'org-agenda)
-(global-set-key (kbd "C-c p") 'org-pomodoro)
+
 
 ;; 优先级范围和默认(A-D)任务的优先级
 (setq org-highest-priority ?A)
@@ -48,18 +57,18 @@
 	  '((sequence "INBOX(i)" "TODO(t!)" "WAITTING(w@/!)" "|" "ABORT(a@/!)" "DONE(d@/!)")))
 ;;设置TODO关键词的外观
 (setq org-todo-keyword-faces
-  '(("TODO" .      (:foreground "red" :weight bold :underline t))
-	("DONE" .      (:foreground "green" :weight bold :underline t))
-	("ABORT" .     (:foreground "blue" :weight bold :underline t))
-	("WAITING" .   (:foreground "orangered" :weight bold :underline t))
-	))
+	  '(("TODO" .      (:foreground "red" :weight bold :underline t))
+		("DONE" .      (:foreground "green" :weight bold :underline t))
+		("ABORT" .     (:foreground "blue" :weight bold :underline t))
+		("WAITING" .   (:foreground "orangered" :weight bold :underline t))
+		))
 ;; 优先级醒目外观
 (setq org-priority-faces
-  '((?A . (:foreground "magenta" :weight bold :underline t))
-    (?B . (:foreground "orange" :weight bold :underline t))
-    (?C . (:foreground "yellow" :weight bold  :underline t))
-	(?D . (:foreground "lightpink" :weight bold  :underline t))
-))
+	  '((?A . (:foreground "magenta" :weight bold :underline t))
+		(?B . (:foreground "orange" :weight bold :underline t))
+		(?C . (:foreground "yellow" :weight bold  :underline t))
+		(?D . (:foreground "lightpink" :weight bold  :underline t))
+		))
 ;;设置gtd文件的路径
 ;;备注：需要C-h v一下org-agenda-files变量，并配置该变量的文件加载路径添加，保存之后会在custom-set-variables函数下面
 ;;生成该语句'(org-agenda-files (quote ("~/my-agenda")))，之后每次启动emacs，路径就能生效了
@@ -86,7 +95,7 @@
 (setq blogs-tcp-ip-active (expand-file-name "blogs-tcp-ip-active.org" org-agenda-dir))
 (setq org-agenda-files (list org-agenda-dir))
 
-			  
+
 ;;%a：创建gtd前光标所在文件的位置
 ;;%?：模板完成后最终光标所在位置
 ;;%U:时间戳
@@ -158,16 +167,16 @@
 		("bg" "blogs-s3c2440     		有关s3c2440的博客" entry (file+headline blogs-s3c2440-active "blogs-s3c2440-active")
 		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@S3c2440:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
 		 :empty-lines 0)
-		 ("bh" "blogs-raspberry-pi		有关树莓派的博客" entry (file+headline blogs-raspberry-pi-active "blogs-raspberry-pi-active")
+		("bh" "blogs-raspberry-pi		有关树莓派的博客" entry (file+headline blogs-raspberry-pi-active "blogs-raspberry-pi-active")
 		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@RaPi:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
 		 :empty-lines 0)
-		 ("bi" "blogs-C    				有关C的博客" entry (file+headline blogs-C-active "blogs-C-active")
+		("bi" "blogs-C    				有关C的博客" entry (file+headline blogs-C-active "blogs-C-active")
 		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@C:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
 		 :empty-lines 0)
-		 ("bj" "blogs-Cpp    				有关C++的博客" entry (file+headline blogs-Cpp-active "blogs-Cpp-active")
+		("bj" "blogs-Cpp    				有关C++的博客" entry (file+headline blogs-Cpp-active "blogs-Cpp-active")
 		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@Cpp:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
 		 :empty-lines 0)
-		 ("bk" "blogs-mysql    			有关mysql的博客" entry (file+headline blogs-mysql-active "blogs-mysql-active")
+		("bk" "blogs-mysql    			有关mysql的博客" entry (file+headline blogs-mysql-active "blogs-mysql-active")
 		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@Mysql:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
 		 :empty-lines 0)
 		("bl" "blogs-qt    				有关QT的博客" entry (file+headline blogs-qt-active "blogs-qt-active")
@@ -176,7 +185,7 @@
 		("bm" "blogs-tcp-ip    			有关TCP-IP的博客" entry (file+headline blogs-tcp-ip-active "blogs-tcp-ip-active")
 		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@TCP:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
 		 :empty-lines 0)
-	))
+		))
 
 (setq org-agenda-custom-commands
       '(("p" . "------按任务优先级查询TODO事项---------TODO--------[A--B--C--D]------------")
@@ -217,7 +226,7 @@
 		("xk" "-------@Qt---------------" tags "+@Qt")
 		("xl" "-------@Mysql------------" tags "+@Mysql")
 		("xm" "-------@TCP--------------" tags "+@TCP")
-      ))
+		))
 
 ;;关闭其它窗口
 (delete-other-windows)
@@ -272,7 +281,7 @@
 (global-set-key [M-s-return] (quote org-insert-todo-heading))
 
 ;;在当前同级标题的最后一个标题后面插入同级的TODO标题
- (global-set-key [C-s-return] (quote org-insert-todo-heading-respect-content))
+(global-set-key [C-s-return] (quote org-insert-todo-heading-respect-content))
 
 ;;该配置使得光标所在的大纲以及该大纲下面的子大纲同时下降一级
 (global-set-key [M-s-left] (quote org-promote-subtree))
