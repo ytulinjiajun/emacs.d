@@ -25,10 +25,12 @@
 							 helm-ag
 							 sr-speedbar
 							 org-pomodoro
-				     		 window-numbering
+							 window-numbering
 							 which-key
 							 evil
 							 evil-leader
+							 evil-surround
+							 evil-nerd-commenter
 							 youdao-dictionary
 							 ) "Default packages")
 

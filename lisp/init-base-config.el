@@ -72,15 +72,27 @@
 (defun indent-buffer()
   (interactive)
   (indent-region (point-min) (point-max)))
-(defun indent-region-or-buffzer()
+
+(defun indent-region-or-buffer()
   (interactive)
   (save-excursion
     (if (region-active-p)
 		(progn
 		  (indent-region (region-beginning) (region-end))
 		  (message "Indent selected region."))
-	  (progn
+      (progn
 		(indent-buffer)
 		(message "Indent buffer.")))))
 (global-unset-key (kbd "C-i"))
 (global-set-key (kbd "C-i") 'indent-region-or-buffer)
+
+;;------------------------------------------------------------------
+;; 该配置的作用是，将光标所在行的上面开辟一个对齐的新行，并将光标移动至该新行
+;;------------------------------------------------------------------ 
+(defun ljj/down-line-backp()
+  (interactive)
+  (progn
+	(previous-line)
+	(move-end-of-line 1)
+	(newline-and-indent)))
+(global-set-key (kbd "C-c n") 'ljj/down-line-backp)

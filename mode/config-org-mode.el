@@ -18,7 +18,7 @@
 ;;------------------------------------------------------------------
 ;; t: 开机自动显示日程表
 ;;------------------------------------------------------------------
-(org-agenda-list t)
+;; (org-agenda-list t)
 
 ;;全屏显示agenda
 (setq-default org-agenda-window-setup (quote current-window))

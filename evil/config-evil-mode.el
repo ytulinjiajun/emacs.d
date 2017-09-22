@@ -9,4 +9,6 @@
 
 (require 'config-evil-leader-plugin)
 
+(require 'config-evil-surround-plugin)
+
 (provide 'config-evil-mode)
