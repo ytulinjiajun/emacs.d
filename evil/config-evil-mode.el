@@ -7,8 +7,22 @@
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
 
+;;------------------------------------------------------------------
+;; 该配置改善occur-mode下面无法使用evil的问题 
+;;------------------------------------------------------------------
+(add-hook 'occur-mode-hook
+		  (lambda ()
+			(evil-add-hjkl-bindings occur-mode-map 'emacs
+			  (kbd "/") 'evil-search-forward
+			  (kbd "n") 'evil-search-next
+			  (kbd "N") 'evil-search-previous
+			  (kbd "C-d") 'evil-scroll-down
+			  (kbd "C-u") 'evil-scroll-up)))  
+
 (require 'config-evil-leader-plugin)
 
 (require 'config-evil-surround-plugin)
+
+(require 'config-evil-nerd-commenter)
 
 (provide 'config-evil-mode)
