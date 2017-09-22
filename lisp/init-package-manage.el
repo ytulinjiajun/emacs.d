@@ -25,9 +25,10 @@
 							 helm-ag
 							 sr-speedbar
 							 org-pomodoro
-							 powerline
-							 window-numbering
+				     		 window-numbering
 							 which-key
+							 evil
+							 evil-leader
 							 youdao-dictionary
 							 ) "Default packages")
 
@@ -73,7 +74,5 @@
 (require 'config-sr-speedbar-plugin)
 
 (require 'config-window-numbering-plugin)
-
-(require 'config-powerline-plugin)
 
 (require 'config-youdao-dictionary-plugin)

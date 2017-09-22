@@ -16,7 +16,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "mode" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "plugin" user-emacs-directory))
-
+(add-to-list 'load-path (expand-file-name "evil" user-emacs-directory))
 ;;------------------------------------------------------------------
 ;; 定位配置文件所在目录
 ;;------------------------------------------------------------------
@@ -55,3 +55,5 @@
 (require 'config-occur-mode)
 
 (require 'config-imenu-mode)
+
+(require 'config-evil-mode)

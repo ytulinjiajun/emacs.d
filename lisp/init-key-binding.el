@@ -6,6 +6,7 @@
 (global-unset-key (kbd "M-r"))
 (global-unset-key (kbd "C-M-d"))
 
+
 ;;-----------------------------绑定快捷键------------------------------------------
 ;;自动换行
 (global-set-key (kbd "<f5>") 'toggle-truncate-lines)
