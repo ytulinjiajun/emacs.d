@@ -1,4 +1,5 @@
-(evil-mode 1)
+;; 开启evil-mode
+(evil-mode t)
 ;;------------------------------------------------------------------
 ;; 该代码块可以将 insert state map 中的快捷键清空，使其可以回退到
 ;; Emacs State 中，这样我们之前的 Emacs State 里面定义的
