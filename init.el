@@ -43,8 +43,12 @@
 
 ;;------------------------------------------------------------------
 ;; require mode
-;;------------------------------------------------------------------ 
-(require 'config-org-mode)
+;;------------------------------------------------------------------
+(require 'config-org-gtd-mode)
+
+(require 'config-org-outline-mode)
+
+(require 'config-org-table-mode)
 
 (require 'config-dired-mode)
 

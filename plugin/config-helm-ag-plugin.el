@@ -14,7 +14,6 @@
 ;;    -- 按C-c C-e,开启一个buffer，在该buffer中列出所有刚刚搜索到的所有条目，并处于可编辑状态
 ;;    -- 对该buffer中的条目进行编辑，可以使用M-s e,进行标记，然后批量编辑
 ;;    -- 按C-c C-c完成编辑，按C-c C-k退出编辑
-
 (global-set-key (kbd "C-c s") 'helm-do-ag-project-root)
 
 (provide 'config-helm-ag-plugin)

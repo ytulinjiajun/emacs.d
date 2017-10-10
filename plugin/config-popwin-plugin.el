@@ -2,7 +2,7 @@
 (require 'popwin)
 (popwin-mode t)
 
-(setq-default popwin:popup-window-position (quote right))
-(setq-default popwin:popup-window-width 60)
+;; (setq-default popwin:popup-window-position (quote right))
+;; (setq-default popwin:popup-window-width 60)
 
 (provide 'config-popwin-plugin)

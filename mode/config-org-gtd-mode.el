@@ -1,4 +1,3 @@
-(provide 'config-org-mode)
 (require 'org)
 (require 'org-pomodoro)
 
@@ -234,64 +233,37 @@
 ;;如果一个任务既安排了开始时间又设定了截止时间，日程表上的提醒将有重复，可以选择显示哪个，忽略截止时间提醒
 ;;(setq org-agenda-skip-deadline-prewarning-if-scheduled t)
 
-;; (setq-default org-refile-targets
-;; 			  (quote
-;; 			   (("inbox.org" :level . 1)
-;; 				("work.org" :level . 1)
-;; 				("life.org" :level . 1)
-;; 				("blogs.org" :level . 1)
-;; 				("blogs-linux-active.org" :level . 1)
-;; 				("blogs-linux-arch-part1.org" :level . 1)
-;; 				("blogs-linux-arch-part2.org" :level . 1)
-;; 				("blogs-emacs-active.org" :level . 1)
-;; 				("blogs-emacs-arch-part1.org" :level . 1)
-;; 				("blogs-makefile-active.org" :level . 1)
-;; 				("blogs-makefile-arch-part1.org" :level . 1)
-;; 				("blogs-git-active.org" :level . 1)
-;; 				("blogs-git-arch-part1.org" :level . 1)
-;; 				("blogs-stm32f4-active.org" :level . 1)
-;; 				("blogs-stm32f4-arch-part1.org" :level . 1)
-;; 				("blogs-stm32f7-active.org" :level . 1)
-;; 				("blogs-stm32f7-arch-part1.org" :level . 1)
-;; 				("blogs-s3c2440-active.org" :level . 1)
-;; 				("blogs-s3c2440-arch-part1.org" :level . 1)
-;; 				("blogs-raspberry-pi-active.org" :level . 1)
-;; 				("blogs-raspberry-pi-arch-part1.org" :level . 1)
-;; 				("blogs-C.org-active" :level . 1)
-;; 				("blogs-C-arch-part1.org" :level . 1)
-;; 				("blogs-Cpp-active.org" :level . 1)
-;; 				("blogs-Cpp-arch-part1.org" :level . 1)
-;; 				("blogs-mysql-active.org" :level . 1)
-;; 				("blogs-mysql-arch-part1.org" :level . 1)
-;; 				("blogs-qt-active.org" :level . 1)
-;; 				("blogs-qt-arch-part1.org" :level . 1)
-;; 				("blogs-tcp-ip-active.org" :level . 1)
-;; 				("blogs-tcp-ip-arch-part1.org" :level . 1))))
-
-
-
-
-;;-----------------------------org-mode快捷键-------------------------------------
-;; (global-set-key (kbd "C-c C-c") 'org-capture)
-;; (global-set-key (kbd "C-c C-a") 'org-agenda)
-;; (global-set-key (kbd "C-c C-l") 'org-link)
-;; (global-set-key (kbd "C-c C-b") 'org-switchb)
-
-;;在当前光标的位置插入一个同级的TODO标题
-(global-set-key [M-s-return] (quote org-insert-todo-heading))
-
-;;在当前同级标题的最后一个标题后面插入同级的TODO标题
-(global-set-key [C-s-return] (quote org-insert-todo-heading-respect-content))
-
-;;该配置使得光标所在的大纲以及该大纲下面的子大纲同时下降一级
-(global-set-key [M-s-left] (quote org-promote-subtree))
-
-;;该配置使得光标所在的大纲以及该大纲下面的子大纲同时上升一级
-(global-set-key [M-s-right] (quote org-demote-subtree))
-
-(global-set-key [M-s-up] (quote org-move-subtree-up))
-
-(global-set-key [M-s-down] (quote org-move-subtree-down))
-
-
-
+(setq-default org-refile-targets
+			  (quote
+			   (("inbox.org" :level . 1)
+				("work.org" :level . 1)
+				("life.org" :level . 1)
+				("blogs.org" :level . 1)
+				("blogs-linux-active.org" :level . 1)
+				("blogs-linux-arch-part1.org" :level . 1)
+				("blogs-linux-arch-part2.org" :level . 1)
+				("blogs-emacs-active.org" :level . 1)
+				("blogs-emacs-arch-part1.org" :level . 1)
+				("blogs-makefile-active.org" :level . 1)
+				("blogs-makefile-arch-part1.org" :level . 1)
+				("blogs-git-active.org" :level . 1)
+				("blogs-git-arch-part1.org" :level . 1)
+				("blogs-stm32f4-active.org" :level . 1)
+				("blogs-stm32f4-arch-part1.org" :level . 1)
+				("blogs-stm32f7-active.org" :level . 1)
+				("blogs-stm32f7-arch-part1.org" :level . 1)
+				("blogs-s3c2440-active.org" :level . 1)
+				("blogs-s3c2440-arch-part1.org" :level . 1)
+				("blogs-raspberry-pi-active.org" :level . 1)
+				("blogs-raspberry-pi-arch-part1.org" :level . 1)
+				("blogs-C.org-active" :level . 1)
+				("blogs-C-arch-part1.org" :level . 1)
+				("blogs-Cpp-active.org" :level . 1)
+				("blogs-Cpp-arch-part1.org" :level . 1)
+				("blogs-mysql-active.org" :level . 1)
+				("blogs-mysql-arch-part1.org" :level . 1)
+				("blogs-qt-active.org" :level . 1)
+				("blogs-qt-arch-part1.org" :level . 1)
+				("blogs-tcp-ip-active.org" :level . 1)
+				("blogs-tcp-ip-arch-part1.org" :level . 1))))
+(provide 'config-org-gtd-mode)

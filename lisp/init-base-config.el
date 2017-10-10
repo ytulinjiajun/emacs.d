@@ -92,7 +92,7 @@
 (defun ljj/down-line-backp()
   (interactive)
   (progn
-	(previous-line)
 	(move-end-of-line 1)
-	(newline-and-indent)))
+	(newline-and-indent)
+	))
 (global-set-key (kbd "C-c n") 'ljj/down-line-backp)
