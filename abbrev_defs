@@ -45,11 +45,14 @@
 # 2. 默认值: 
 # 3. 配置值: 
 # 4. 备注: 
-#-------------------------------------------------------------------" nil 3)
+#-------------------------------------------------------------------" nil 0)
+    ("8zspy" "#!/usr/bin/python" nil 1)
     ("LJJT" "--------------------------------xxxxx------------------------------------------" nil 0)
    ))
 
 (define-abbrev-table 'help-mode-abbrev-table '())
+
+(define-abbrev-table 'inferior-python-mode-abbrev-table '())
 
 (define-abbrev-table 'ivy-occur-grep-mode-abbrev-table '())
 
@@ -75,7 +78,15 @@
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
 
+(define-abbrev-table 'python-mode-abbrev-table '())
+
+(define-abbrev-table 'python-mode-skeleton-abbrev-table
+  '(
+   ))
+
 (define-abbrev-table 'select-tags-table-mode-abbrev-table '())
+
+(define-abbrev-table 'shell-mode-abbrev-table '())
 
 (define-abbrev-table 'special-mode-abbrev-table '())
 

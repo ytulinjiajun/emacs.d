@@ -33,9 +33,10 @@
 (setq org-src-fontify-natively t)
 
 ;;gtd快捷键
-(define-key global-map "\C-c\C-c" 'org-capture)
-(define-key global-map "\C-c\C-a" 'org-agenda)
-
+;;(define-key global-map "\C-c\C-c" 'org-capture)
+;;(define-key global-map "\C-c\C-a" 'org-agenda)
+(global-set-key (kbd "C-c C-c") 'org-capture)
+(global-set-key (kbd "C-c C-a") 'org-agenda)
 
 ;; 优先级范围和默认(A-D)任务的优先级
 (setq org-highest-priority ?A)
@@ -86,6 +87,7 @@
 (setq blogs-stm32f4-active (expand-file-name "blogs-stm32f4-active.org" org-agenda-dir))
 (setq blogs-stm32f7-active (expand-file-name "blogs-stm32f7-active.org" org-agenda-dir))
 (setq blogs-s3c2440-active (expand-file-name "blogs-s3c2440-active.org" org-agenda-dir))
+(setq blogs-python-active (expand-file-name "blogs-python-active.org" org-agenda-dir))
 (setq blogs-raspberry-pi-active (expand-file-name "blogs-raspberry-pi-active.org" org-agenda-dir))
 (setq blogs-C-active (expand-file-name "blogs-C-active.org" org-agenda-dir))
 (setq blogs-Cpp-active (expand-file-name "blogs-Cpp-active.org" org-agenda-dir))
@@ -184,6 +186,9 @@
 		("bm" "blogs-tcp-ip    			有关TCP-IP的博客" entry (file+headline blogs-tcp-ip-active "blogs-tcp-ip-active")
 		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@TCP:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
 		 :empty-lines 0)
+		("bn" "blogs-python     		    有关python的博客" entry (file+headline blogs-python-active "blogs-python-active")
+		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@Python:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
+		 :empty-lines 0)
 		))
 
 (setq org-agenda-custom-commands
@@ -225,6 +230,7 @@
 		("xk" "-------@Qt---------------" tags "+@Qt")
 		("xl" "-------@Mysql------------" tags "+@Mysql")
 		("xm" "-------@TCP--------------" tags "+@TCP")
+		("xn" "-------@Python-----------" tags "+@Python")
 		))
 
 ;;关闭其它窗口
@@ -265,5 +271,7 @@
 				("blogs-qt-active.org" :level . 1)
 				("blogs-qt-arch-part1.org" :level . 1)
 				("blogs-tcp-ip-active.org" :level . 1)
-				("blogs-tcp-ip-arch-part1.org" :level . 1))))
+				("blogs-tcp-ip-arch-part1.org" :level . 1)
+				("blogs-python-active.org" :level . 1)
+				("blogs-python-arch-part1.org" :level . 1))))
 (provide 'config-org-gtd-mode)

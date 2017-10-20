@@ -60,4 +60,4 @@
 
 (require 'config-imenu-mode)
 
-;; (require 'config-evil-mode)
+(require 'config-evil-mode)

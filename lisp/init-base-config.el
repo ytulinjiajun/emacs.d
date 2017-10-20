@@ -16,7 +16,14 @@
 (global-linum-mode t)
 
 ;;默认全屏
-(setq initial-frame-alist (quote ((fullscreen . maximized))))
+;;(setq initial-frame-alist (quote ((fullscreen . maximized))))
+
+;;设置启动时窗口位置为屏库左上角(0,0)
+(set-frame-position (selected-frame) 75 45)
+
+;;设置启动是的宽和高
+(set-frame-width (selected-frame) 110)
+(set-frame-height (selected-frame) 35)
 
 ;;禁止自动备份文件
 (setq make-backup-files nil)
