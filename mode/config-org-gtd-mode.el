@@ -94,6 +94,7 @@
 (setq blogs-Mysql-active (expand-file-name "blogs-mysql-active.org" org-agenda-dir))
 (setq blogs-qt-active (expand-file-name "blogs-qt-active.org" org-agenda-dir))
 (setq blogs-tcp-ip-active (expand-file-name "blogs-tcp-ip-active.org" org-agenda-dir))
+(setq blogs-linux-kernel (expand-file-name "blogs-linux-kernel.org" org-agenda-dir))
 (setq org-agenda-files (list org-agenda-dir))
 
 
@@ -189,6 +190,9 @@
 		("bn" "blogs-python     		    有关python的博客" entry (file+headline blogs-python-active "blogs-python-active")
 		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@Python:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
 		 :empty-lines 0)
+		("bo" "blogs-linux-kernel     		    有关linux-kernel的博客" entry (file+headline blogs-linux-kernel "blogs-linux-kernel")
+		 "* WAITTING [#D] Theme:%^{}%? :@Blog:@Kernel:\n\tSCHEDULED:%t\n\nBlog creation time:%U %i\n"
+		 :empty-lines 0)
 		))
 
 (setq org-agenda-custom-commands
@@ -231,6 +235,7 @@
 		("xl" "-------@Mysql------------" tags "+@Mysql")
 		("xm" "-------@TCP--------------" tags "+@TCP")
 		("xn" "-------@Python-----------" tags "+@Python")
+		("xo" "-------@Kernel-----------" tags  "+@Kernel")
 		))
 
 ;;关闭其它窗口
@@ -273,5 +278,6 @@
 				("blogs-tcp-ip-active.org" :level . 1)
 				("blogs-tcp-ip-arch-part1.org" :level . 1)
 				("blogs-python-active.org" :level . 1)
-				("blogs-python-arch-part1.org" :level . 1))))
+				("blogs-python-arch-part1.org" :level . 1)
+				("blogs-linux-kernel.org" :level . 1))))
 (provide 'config-org-gtd-mode)

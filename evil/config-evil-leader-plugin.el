@@ -20,7 +20,7 @@
   "3" 'select-window-3
   "wr" 'split-window-right
   "wb" 'split-window-below
-  "wq" 'delete-other-windows
+  "wq" 'delete-windows
   "md" 'ljj/down-line-backp
   "ma" 'evil-first-non-blank
   "me" 'evil-end-of-line

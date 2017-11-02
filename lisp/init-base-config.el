@@ -76,22 +76,22 @@
 ;;------------------------------------------------------------------
 ;; 该配置使得不用选中选取直接按TAB就能对当前缓冲区进行排版
 ;;------------------------------------------------------------------ 
-(defun indent-buffer()
-  (interactive)
-  (indent-region (point-min) (point-max)))
+;; (defun indent-buffer()
+;;   (interactive)
+;;   (indent-region (point-min) (point-max)))
 
-(defun indent-region-or-buffer()
-  (interactive)
-  (save-excursion
-    (if (region-active-p)
-		(progn
-		  (indent-region (region-beginning) (region-end))
-		  (message "Indent selected region."))
-      (progn
-		(indent-buffer)
-		(message "Indent buffer.")))))
-(global-unset-key (kbd "C-i"))
-(global-set-key (kbd "C-i") 'indent-region-or-buffer)
+;; (defun indent-region-or-buffer()
+;;   (interactive)
+;;   (save-excursion
+;;     (if (region-active-p)
+;; 		(progn
+;; 		  (indent-region (region-beginning) (region-end))
+;; 		  (message "Indent selected region."))
+;;       (progn
+;; 		(indent-buffer)
+;; 		(message "Indent buffer.")))))
+;; (global-unset-key (kbd "C-i"))
+;; (global-set-key (kbd "C-i") 'indent-region-or-buffer)
 
 ;;------------------------------------------------------------------
 ;; 该配置的作用是，将光标所在行的上面开辟一个对齐的新行，并将光标移动至该新行
