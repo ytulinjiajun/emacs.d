@@ -32,6 +32,7 @@
 							 evil-surround
 							 evil-nerd-commenter
 							 youdao-dictionary
+							 yafolding
 							 ) "Default packages")
 
 ;;当运行package-autoremove时，会去检查package-selected-packages这个变量的值，
@@ -78,3 +79,5 @@
 (require 'config-window-numbering-plugin)
 
 (require 'config-youdao-dictionary-plugin)
+
+(require 'config-yafolding-plugin)

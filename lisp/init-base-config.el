@@ -22,8 +22,11 @@
 (set-frame-position (selected-frame) 75 45)
 
 ;;设置启动是的宽和高
-(set-frame-width (selected-frame) 110)
-(set-frame-height (selected-frame) 35)
+(set-frame-width (selected-frame) 85)
+(set-frame-height (selected-frame) 25)
+
+;; 设置字体大小(M-x: describe-font)
+(set-default-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1")
 
 ;;禁止自动备份文件
 (setq make-backup-files nil)
@@ -53,7 +56,7 @@
 (global-hl-line-mode t)
 
 ;;设置tab缩进的字符数
-(setq default-tab-width 4)
+(setq default-tab-width 8)
 
 ;;简化yes-or-no
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -103,3 +106,18 @@
 	(newline-and-indent)
 	))
 (global-set-key (kbd "C-c n") 'ljj/down-line-backp)
+
+;;------------------------------------------------------------------
+;; 该配置的作用是,排版
+;;------------------------------------------------------------------ 
+(defun ljj/auto-indent-and-number ()
+  (interactive)
+  (progn
+	(org-beginning-of-line t)
+	(hungry-delete-backward 1 nil)
+	(org-meta-return t)
+	(next-line 1)
+	))
+(global-set-key (kbd "C-c t") 'ljj/auto-indent-and-number)
+
+

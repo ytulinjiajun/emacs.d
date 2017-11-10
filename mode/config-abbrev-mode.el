@@ -13,6 +13,10 @@
 # 4. 备注: 
 #-------------------------------------------------------------------")
 						 ("8zspy" "#!/usr/bin/python")
+						 ("8zscm" "#ifndef _XX_H
+#define _XX_H
+
+#endif")
                          ))
 
 (provide 'config-abbrev-mode)
