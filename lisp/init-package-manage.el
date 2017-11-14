@@ -1,8 +1,10 @@
 (provide 'init-package-manage)
 ;;注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
 (when (>= emacs-major-version 24)
-  (setq package-archives '(("gnu" . "http://elpa.emacs-china.org/gnu/")
-			   ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
+  (setq package-archives '(("melpa" . "http://elpa.emacs-china.org/melpa/")
+			   ("gnu" . "http://elpa.emacs-china.org/gnu/")
+			   ("marmalade" . "http://elpa.emacs-china.org/marmalade/")
+			   )))
 
 ;;cl - Common Lisp Extension
 ;;一个 Common Lisp 库，提供下面使用到的loop for pkg in之类的语法
@@ -14,6 +16,8 @@
 (defvar linjiajun/packages '(
 							 monokai-theme
 							 company
+							 company-cmake
+							 company-shell
 							 hungry-delete
 							 swiper
 							 counsel

@@ -121,3 +121,13 @@
 (global-set-key (kbd "C-c t") 'ljj/auto-indent-and-number)
 
 
+;;------------------------------------------------------------------
+;; 改善M-Enter
+;;------------------------------------------------------------------
+(defun ljj/improve-alt-return ()
+  (interactive)
+  (progn
+    (ljj/down-line-backp)
+    (org-insert-heading t)
+    ))
+(global-set-key  (kbd "C-c r") 'ljj/improve-alt-return)

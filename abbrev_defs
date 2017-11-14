@@ -25,6 +25,8 @@
 
 (define-abbrev-table 'calendar-mode-abbrev-table '())
 
+(define-abbrev-table 'cmake-mode-abbrev-table '())
+
 (define-abbrev-table 'comint-mode-abbrev-table '())
 
 (define-abbrev-table 'completion-list-mode-abbrev-table '())
@@ -64,6 +66,10 @@
 # 3. 配置值: 
 # 4. 备注: 
 #-------------------------------------------------------------------" nil 0)
+    ("8zsch" "#ifndef _XX_H
+#define _XX_H
+
+#endif" nil 1)
     ("8zscm" "#ifndef _XX_H
 #define _XX_H
 
