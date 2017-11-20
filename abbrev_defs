@@ -5,9 +5,7 @@
 
 (define-abbrev-table 'Info-edit-mode-abbrev-table '())
 
-(define-abbrev-table 'awk-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'awk-mode-abbrev-table '())
 
 (define-abbrev-table 'bibtex-mode-abbrev-table '())
 
@@ -15,13 +13,9 @@
 
 (define-abbrev-table 'bookmark-edit-annotation-mode-abbrev-table '())
 
-(define-abbrev-table 'c++-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'c++-mode-abbrev-table '())
 
-(define-abbrev-table 'c-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'c-mode-abbrev-table '())
 
 (define-abbrev-table 'calendar-mode-abbrev-table '())
 
@@ -56,7 +50,7 @@
     ("8zl" "--------------------------------xxxxx------------------------------------------" nil 2)
     ("8zs" ";;------------------------------------------------------------------
 ;; 
-;;------------------------------------------------------------------" nil 1)
+;;------------------------------------------------------------------" nil 2)
     ("8zs1" ";;------------------------------------------------------------------
 ;; 
 ;;------------------------------------------------------------------" nil 0)
@@ -69,11 +63,14 @@
     ("8zsch" "#ifndef _XX_H
 #define _XX_H
 
-#endif" nil 1)
+#endif" nil 0)
     ("8zscm" "#ifndef _XX_H
 #define _XX_H
 
 #endif" nil 1)
+    ("8zscmake" "#----------------------------------------------------------------
+#
+#----------------------------------------------------------------" nil 2)
     ("8zspy" "#!/usr/bin/python" nil 0)
     ("LJJT" "--------------------------------xxxxx------------------------------------------" nil 0)
    ))
@@ -88,9 +85,7 @@
 
 (define-abbrev-table 'ivy-occur-mode-abbrev-table '())
 
-(define-abbrev-table 'java-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'java-mode-abbrev-table '())
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
@@ -98,9 +93,7 @@
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
 
-(define-abbrev-table 'objc-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'objc-mode-abbrev-table '())
 
 (define-abbrev-table 'occur-edit-mode-abbrev-table '())
 
@@ -112,9 +105,7 @@
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
-(define-abbrev-table 'pike-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'pike-mode-abbrev-table '())
 
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
